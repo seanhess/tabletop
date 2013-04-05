@@ -1,2 +1,11 @@
 .DS_Store
 node_modules
+
+*.swp
+*.js
+*.css
+public/components
+*.lock
+build/
+
+
