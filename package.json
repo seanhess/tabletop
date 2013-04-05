@@ -1,0 +1,17 @@
+{
+  "author": "Sean Hess",
+  "name": "tabletop",
+  "version": "0.0.1",
+  "main": "api/app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/seanhess/tabletop"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "0.8.x"
+  }
+}
