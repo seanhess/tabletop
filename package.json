@@ -2,12 +2,17 @@
   "author": "Sean Hess",
   "name": "tabletop",
   "version": "0.0.1",
-  "main": "api/app.js",
+  "main": "server/server.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/seanhess/tabletop"
   },
   "dependencies": {
+    "connect": "~2.7.4",
+    "express": "~3.1.1",
+    "nib": "~0.9.1",
+    "stylus": "~0.32.1",
+    "typescript": "~0.8.3"
   },
   "devDependencies": {},
   "optionalDependencies": {},
