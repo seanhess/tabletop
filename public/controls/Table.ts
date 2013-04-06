@@ -6,13 +6,16 @@ interface TableParams {
 
 console.log("Register - TableCtrl")
 
-angular.module('app').controller('TableCtrl', function($scope, $http:ng.IHttpService, $routeParams: TableParams) {
+angular.module('app').controller('TableCtrl', function($scope, $http:ng.IHttpService, $routeParams: TableParams, angularFire:Function) {
     $scope.tableId = $routeParams.tableId
-    $scope.person = $http.get('/gogogo').then((p) => p.data)
-    $scope.objects = [{imageUrl:"http://magiccards.info/scans/en/rtr/5.jpg"}]
+    // example of promise fulfillment
+    // $scope.person = $http.get('/gogogo').then((p) => p.data)
+    
+    // Firebase connection
+    var tableUrl = "https://tabletop.firebaseio.com/tables/" + $scope.tableId + "/objects"
+    $scope.objects = angularFire(tableUrl, $scope, "objects", [])
     
     $scope.onDrop = function(item:IDroppedItem) {
-        console.log("dropped", item)
         $scope.objects.push({
           imageUrl: item.url
         })
