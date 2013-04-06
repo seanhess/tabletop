@@ -6,4 +6,6 @@
 ///<reference path="router.ts"/>
 ///<reference path="controls/Table.ts"/>
 
+///<reference path="directives/drop.ts"/>
+
 angular.bootstrap($(document), ['app'])

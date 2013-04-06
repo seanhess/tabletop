@@ -20,12 +20,7 @@ app.configure("test", () => {
 
 app.configure("development", () => {
   console.log("DEVELOPMENT")
-  app.use(stylus.middleware({
-    src: '../public',
-    compile: (str, path) => {
-      return stylus(str).use(nib()).import('nib').set('filename', path)
-    }
-  }))
+  app.use(stylus.middleware({src: path.join(__dirname,'..','public')}))
 })
 
 app.configure("production", () => {
@@ -34,7 +29,6 @@ app.configure("production", () => {
 
 app.configure(() => {
   console.log("CONFIGURE")
-  
   app.use(connect.static(__dirname + '/../public'))
   app.use(connect.cookieParser())
   app.use(connect.multipart())
@@ -43,7 +37,7 @@ app.configure(() => {
 })
 
 app.get('/gogogo', function(req, res) {
-    res.send({name:"sean"})
+  res.send({name:"sean"})
 })
 
 
