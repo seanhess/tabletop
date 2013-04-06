@@ -42,8 +42,17 @@ app.configure(() => {
   //app.use(connect.session({secret: 'funky monkey', key: 'blah', store:new connect.session.MemoryStore()}))
 })
 
+app.get('/gogogo', function(req, res) {
+    res.send({name:"sean"})
+})
+
 
 /// APP ///////////////////////////////////////////
+// public/index.html is loaded by default
+// or explicitly for any route with no extension
+app.get(/\/[\w\-]+$/, function(req, res) {
+  res.sendfile(path.join(__dirname,'..','public','index.html'))
+})
 
 if (module == (<any>require).main) {
   var server = http.createServer(app)

@@ -2,11 +2,8 @@
 ///<reference path="def/angular.d.ts"/>
 ///<reference path="def/underscore.d.ts"/>
 
-console.log("Register: App")
-var app = angular.module('app', [], function ($routeProvider: ng.IRouteProvider, $locationProvider: ng.ILocationProvider) {
-  $locationProvider.html5Mode(true)
-  $routeProvider.when('/', {templateUrl: '/partials/home.html'})
-  $routeProvider.otherwise({redirectTo: '/'})
-})
+// router must be first
+///<reference path="router.ts"/>
+///<reference path="controls/Table.ts"/>
 
 angular.bootstrap($(document), ['app'])
