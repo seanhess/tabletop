@@ -8,7 +8,7 @@
     "url": "git://github.com/seanhess/tabletop"
   },
   "dependencies": {
-    "connect": "~2.7.4",
+    "connect": "~3.7.0",
     "express": "~3.1.1",
     "nib": "~0.9.1",
     "stylus": "~0.32.1",
